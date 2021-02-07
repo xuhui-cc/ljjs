@@ -1,0 +1,188 @@
+
+<view class="container">
+
+    <naviBar title="课程"></naviBar>
+
+
+    <view class='top' style="margin-top:{{naviHeight }}px;">
+        <view class='tit'>{{info.title}}</view>
+        <view class='sub_tit'>{{info.subject}}</view>
+        <view class='top_con'>
+            <view class='con_img'>
+                <view wx:for="{{teacherList}}" wx:key="this" class='img_box'>
+                    <image style='width:68rpx;height:68rpx;border-radius:50%;' src="{{item.avatar}}"></image>
+                    <view class='box_text'>{{item.name}}</view>
+                </view>
+            </view>
+            <view wx:if="{{isshowbuy}}" class='con_text'>
+                 {{info.buy_count}}人已购买
+            </view>
+        </view>
+    </view>
+    <view class='main_box'>
+         <view class='main_sel'>
+            <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>介绍{{getApp().globalData.isshowbuy}}</view>
+            <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>目录</view>
+         </view>
+         <view class='main_con'>
+            <swiper  scroll-y="{{true}}" style="height: {{clientHeight?clientHeight-228 +'px':'auto'}};margin-bottom:140rpx;" current="{{currentData}}" class='swiper'  duration="300" bindchange="bindchange">
+              <swiper-item>
+                  <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight-228+'px':'auto'}}">
+                  <view wx:if="{{info.body_app}}" class='swiper_con'>
+                       <rich-text nodes="{{info.body_app}}"></rich-text>
+                  </view>
+                  <view wx:else class='swiper_con_fu'>
+                       <image style="width:332rpx;height:233rpx;" src="/images/moren.png"></image>
+                       <view class="fu_text">空空如也~</view>
+                  </view>
+                  </scroll-view>
+              </swiper-item> 
+              
+              <swiper-item>
+               
+                  <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight-228+'px':'auto'}}">
+                  <view class='swiper_con'>
+                        <view wx:for="{{mulu}}" wx:key="this" class='item'>
+                            
+                            <view class='item_cell'>
+                                 <view class='cell_le'>{{item.title}}<text class='dt'></text></view>
+                                 <view wx:if="{{item.iszhedie}}" bindtap='zhedie' data-index="{{index}}" class='cell_ri'>
+                                     <image style='width:48rpx;height:48rpx;' src="/images/shou@2x.png"></image>
+                                 </view>
+                                 <view  wx:else bindtap='zhedie' data-index="{{index}}" class='cell_ri dd'>
+                                     <image style='width:48rpx;height:48rpx;' src="/images/shou@2x.png"></image>
+                                 </view>
+                            </view>
+                            <view wx:if="{{item.iszhedie}}" class='subcell_box'>
+                                <view  wx:for="{{item.lesson_list}}" wx:key="this" wx:for-item="pitem" wx:for-index="pindex"  class='item_subcell'>
+                                    <button class="loginBtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if="{{!islogin}}" style="height:100rpx"></button>
+                                  <view class='subcell_le'>
+                                        <view class='text_le'>
+                                            <image style='width:32rpx;height:32rpx;' src="/images/bofang.png"></image>
+                                        </view>
+                                        <view class='text_ri'>
+                                            <view class='ri_tit'>{{pitem.serial_number}} {{pitem.video_title}}</view> 
+                                            <view class='ri_lab'>
+                                                <view style='display:none;' class='lab_box'>{{pitem.duration}}分钟</view>
+                                                <view style='display:none;' class='lab_box'>{{pitem.point_count}}知识点</view>
+                                                <view style='display:none;' class='lab_box'>{{pitem.question_count}}练习题</view>
+                                            </view>
+                                        </view>
+                                  </view>
+                                  <view class='subcell_ri'>
+                                      <block wx:if="{{info.is_buy}}">
+                                          <view wx:if="{{pitem.state ==0}}" data-lesson_id="{{pitem.fileid}}" data-id="{{pitem.id}}"  bindtap='gokan_video' class='ri_text'>去学习
+                                          </view>
+                                          <view wx:if="{{pitem.state ==1}}" data-lesson_id="{{pitem.fileid}}" data-id="{{pitem.id}}" bindtap='gokan_video' class='ri_text2'><image src="/images/shangci.png" style="width:12rpx;height:14rpx;"></image><text>上次学到</text>
+                                          </view>
+                                          <view wx:if="{{pitem.state ==2}}" data-lesson_id="{{pitem.fileid}}" data-id="{{pitem.id}}" bindtap='gokan_video' class='ri_text3'><image src="/images/yiwancheng.png" style="width:12rpx;height:14rpx;"></image><text class="tp">已完成</text>
+                                          </view>
+                                      </block>
+                                      <block wx:else>
+                                          <view wx:if="{{pitem.isfees == 1}}" class='ri_suo'>
+                                              <image class='suo_img'  style='width:20rpx;height:24rpx;' src="/images/daijiesuo.png"></image>待解锁
+                                          </view>
+                                           <view wx:if="{{pitem.isfees == 0 && pitem.state ==0}}" bindtap='gokan_video' data-id="{{pitem.id}}"  data-lesson_id="{{pitem.fileid}}" class='ri_text'>
+                                              去学习
+                                          </view>
+                                          <view wx:if="{{pitem.isfees == 0 && pitem.state ==1}}" bindtap='gokan_video' data-id="{{pitem.id}}"  data-lesson_id="{{pitem.fileid}}" class='ri_text'>
+                                              上次学到
+                                          </view>
+                                          <view wx:if="{{pitem.isfees == 0 && pitem.state ==2}}" bindtap='gokan_video' data-id="{{pitem.id}}"  data-lesson_id="{{pitem.fileid}}" class='ri_text'>
+                                              已完成
+                                          </view>
+                                      </block>
+                                  </view>
+                              </view>
+                            </view>
+                       </view>
+                       
+                  </view>
+                  </scroll-view>
+              </swiper-item>
+            </swiper>
+         </view>
+    </view>
+</view>
+
+
+<button class="loginBtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if="{{!islogin}}" style="bottom: 0rpx;position: fixed;"></button>
+<view class="course_get" wx:if="{{info.price?(info.price > 0 && info.is_buy == 0):'true'}}" bindtap="getCourse">
+  <view class="btn">
+    <view class="course_price" wx:if="{{info.price}}">¥ {{info.price}}</view>
+    <view class="course_tip" style="{{info.price?'':'margin-left:200rpx;'}}">请联系咨询老师开通</view>
+  </view>
+</view>
+
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{needBuy}}"></view>
+  <view style="position: fixed;z-index: 201;top:100rpx;" wx:if="{{needBuy}}">
+    <image class="coupon_bg" src=" /images/coupon_bg.png"></image>
+    <image class="tea_ava" src="{{teacherInfo.avatar}}"></image>
+    <image class="tea_ava" style="margin-top:587rpx;" src="{{teacherInfo.avatar}}"></image>
+    <view class="cont1">{{teacherInfo.msg}}</view>
+    <text class="cont2" selectable='true'>{{teacherInfo.tearcher}}{{teacherInfo.mobile}}</text>
+    <view class="cont1" style="margin-top:657rpx;">（微信号同手机号）</view>
+    <image class="del" src="/images/del2.png" bindtap="closeGetCourse"></image>
+    <image class="copy" src="/images/copy.png" bindtap="copy"></image>
+  </view>
+
+  <canvas canvas-id="shareCanvas" style="width:375px; height:320px;top:500rpx;" wx:if="{{showCanvas}}"></canvas>
+<!-- <block wx:if="{{(info.is_buy == 0) && (info.price != 0) && (isshowbuy == true)}}">
+<view wx:if="{{info.discount_end_time}}" class='timefixed'>距离结束还剩 <text style='margin-left:10rpx;margin-right:10rpx;' class='fang'>{{clock.day}}</text>天<text style='margin: 0 10rpx;' class='fang'>{{clock.hou}}</text>:<text style='margin: 0 10rpx;' class='fang' style='margin: 0 10rpx;'>{{clock.min}}</text>:<text style='margin: 0 10rpx;' class='fang'>{{clock.sec}}</text></view>
+<view wx:if="{{isauth == true}}"  class='fixbut' bindtap='gobuy_page'>
+    <view class='box_but'>
+        <view wx:if="{{info.discount_price}}" class='but_le'>
+             <view class='le_img'>
+                <image style='width:105rpx;height:40rpx;' src="/images/msj@2x.png"></image>
+             </view>
+             <view class='le_pri'><text>￥</text>{{info.discount_price}}</view>
+             <view class='le_opri'>￥{{info.price}}</view>
+        </view>
+        <view wx:else  class='but_le'>
+            
+             <view  class='le_pri'><text>立即购买: </text>{{info.price}}</view>
+             
+        </view>
+        
+    </view>
+</view>
+
+<view wx:else  class='fixbut'>
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="bt2">
+    <view class='box_but'>
+        <view wx:if="{{info.discount_price}}" class='but_le'>
+             <view class='le_img'>
+                <image style='width:105rpx;height:40rpx;' src="/images/msj@2x.png"></image>
+             </view>
+             <view class='le_pri'><text>￥</text>{{info.discount_price}}</view>
+             <view class='le_opri'>￥{{info.price}}</view>
+        </view>
+        <view wx:else  class='but_le'>
+             <view  class='le_pri'><text>立即购买: </text>{{info.price}}</view>
+        </view>
+        
+    </view>
+    </button>
+</view>
+</block>
+
+<block wx:if="{{(isauth == false) && (info.price == 0.00)}}">
+   <view wx:if="{{isshowbuy}}"  class='fixbut'>
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="bt2">
+    <view class='box_but'>
+        <view wx:if="{{info.discount_price}}" class='but_le'>
+             <view class='le_img'>
+                <image style='width:105rpx;height:40rpx;' src="/images/msj@2x.png"></image>
+             </view>
+             <view class='le_pri'><text>￥</text>{{info.discount_price}}</view>
+             <view class='le_opri'>￥{{info.price}}</view>
+        </view>
+        <view wx:else  class='but_le'>
+             <view  class='le_pri'><text>立即报名 </text></view>
+        </view>
+       
+    </view>
+    </button>
+</view>
+</block> -->

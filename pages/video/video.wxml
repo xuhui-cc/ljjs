@@ -1,0 +1,5 @@
+<!--pages/video/video.wxml-->
+
+  <video class="video" src='{{url}}' autoplay='true' controls='true'></video>
+
+

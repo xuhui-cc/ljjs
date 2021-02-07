@@ -1,0 +1,475 @@
+/* pages/course_xiang/course_xiang.wxss */
+.loginBtn{
+  position: absolute;
+  z-index: 300;
+  width: 750rpx;
+  height: 150rpx;
+  /* background:rgba(1,1,1,1) ; */
+  background: transparent;
+}
+.loginBtn::after {
+  border: none;
+}
+.course_get{
+  bottom: 0rpx;
+  position: fixed;
+  width: 750rpx;
+  height: 150rpx;
+  background:rgba(255,255,255,1);
+  z-index: 100;
+}
+.btn{
+  display: flex;
+  margin-left: 50rpx;
+  margin-top: 40rpx;
+  width: 650rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  background:rgba(3,182,131,1) ;
+}
+.course_price{
+  margin-left:100rpx ;
+  width: 200rpx;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:70rpx;
+  color:rgba(255,255,255,1);
+
+}
+.course_tip{
+  /* margin-left:50rpx ; */
+  width: 300rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:70rpx;
+  color:rgba(255,255,255,1);
+}
+
+/* 联系老师蒙层 */
+.mask{
+  top: 0;
+  position: fixed;
+  width: 750rpx;
+  height: 100%;
+  background: #000000;
+  opacity: 0.55;
+  z-index: 200;
+
+}
+.coupon_bg{
+  position: fixed;
+  margin-top: 350rpx;
+  margin-left: 74rpx;
+  width: 589rpx;
+  height: 451rpx;
+  
+
+
+}
+.cont1{
+  position: fixed;
+  margin-top: 430rpx;
+  margin-left: 254rpx;
+  width: 330rpx;
+  height: 87rpx;
+  font-size: 29rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 35rpx;
+  color: #FFFFFF;
+  
+
+}
+.cont2{
+  position: fixed;
+  margin-top: 607rpx;
+  margin-left: 254rpx;
+  width: 350rpx;
+  height: 46rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 42rpx;
+  color: #82480D;
+  
+
+}
+.tea_ava{
+  position: fixed;
+  margin-top: 422rpx;
+  margin-left: 118rpx;
+  width: 85rpx;
+  height: 85rpx;
+  border-radius: 50%;
+  
+}
+.del{
+  position: fixed;
+  margin-top: 270rpx;
+  margin-left: 646rpx;
+  width: 51rpx;
+  height: 51rpx;
+  
+  
+}
+.copy{
+  position: fixed;
+  margin-top: 800rpx;
+  margin-left: 212rpx;
+  width: 315rpx;
+  height: 136rpx;
+  
+  
+}
+
+.ri_suo{
+  width: 150rpx;
+  font-size:22rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(187,187,187,1);
+opacity:1;
+}
+.bt2{
+   background-color: transparent;
+}
+.bt2::after{
+  border: none;
+  padding: 0;
+}
+.suo_img{
+  padding-right: 10rpx;
+}
+.top{
+  margin-top: 2rpx;
+  padding: 40rpx 32rpx;
+  background: white;
+}
+.dd{
+  transform: rotate(180deg)
+}
+.tit{
+
+font-size:36rpx;
+font-family:PingFang SC;
+font-weight:bold;
+line-height:50rpx;
+color:rgba(10,10,10,1);
+opacity:1;
+}
+.sub_tit{
+margin-top: 8rpx;  
+font-size:28rpx;
+font-family:PingFang SC;
+font-weight:400;
+line-height:40rpx;
+color:rgba(136,136,136,1);
+opacity:1;
+}
+.top_con{
+  margin-top: 24rpx;
+}
+.box_text{
+font-size:24rpx;
+font-family:PingFang SC;
+font-weight:300;
+line-height:34rpx;
+color:rgba(136,136,136,1);
+opacity:1;
+/* width: 68rpx; */
+text-align: center;
+}
+.con_text{
+font-size:24rpx;
+font-family:PingFang SC;
+font-weight:400;
+line-height:44rpx;
+color:rgba(136,136,136,1);
+opacity:1;
+}
+.top_con{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.con_img{
+  display: flex;
+  flex-direction: row;
+  
+}
+.img_box{
+  margin-right: 38rpx;
+}
+
+.main_sel{
+  display: flex;
+  flex-direction: row;
+  height: 110rpx;
+  background: white;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(10,10,10,1);
+  opacity:1;
+  padding-left: 60rpx;
+}
+.tab{
+   line-height: 110rpx;
+   margin-right: 100rpx;
+   width:76rpx;
+}
+.tabBorer{
+    font-size:36rpx;
+    font-family:PingFang SC;
+    font-weight:bold;
+    color:rgba(10,10,10,1);
+    opacity:1;
+    line-height: 110rpx;
+    border-bottom:6rpx solid  #00A09A;
+    /* box-sizing: border-box; */
+    box-sizing: content-box;
+    overflow: hidden;
+    /* border-radius:4rpx; */
+}
+.main_con{
+  margin-top:2rpx;
+  /* margin-bottom: 69rpx;  */
+}
+.item{
+  padding: 0 32rpx;
+  background: white;
+}
+.item_cell{
+  height: 124rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(10,10,10,1);
+opacity:1;
+}
+.item_subcell{
+  min-height: 160rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #E6E6E6;
+}
+.subcell_le{
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.ri_lab{
+  display: flex;
+  flex-direction: row;
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:300;
+color:rgba(136,136,136,1);
+opacity:1;
+}
+.subcell_ri{
+  display: flex;
+  align-items: center;
+  width: 160rpx;
+  justify-content:flex-end;
+}
+.lab_box{
+  border-top: 10rpx solid #F0F0F0;
+  margin-right: 24rpx;
+  padding-top: 14rpx;
+}
+.dt{
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(136,136,136,1);
+opacity:1;
+}
+.ri_tit{
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(10,10,10,1);
+opacity:1;
+margin-bottom: 12rpx;
+}
+.text_ri{
+  /* margin-left: 30rpx; */
+  /* margin-left: 12rpx; */
+  width: 450rpx;
+}
+.text-_le{
+  padding-right: 16rpx;
+}
+.ri_text{
+  width:106rpx;
+height:40rpx;
+/* background:rgba(230,85,87,1); */
+/* background:rgba(0,160,154,1); */
+opacity:1;
+border-radius:40rpx;
+border: 1rpx solid #00A09A;
+font-size:22rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:#00A09A;
+line-height: 40rpx;
+text-align: center;
+}
+.ri_text2{
+/* width:84rpx;*/
+height:40rpx;
+/* background:rgba(230,85,87,1); */
+background:rgba(0,160,154,1);
+opacity:1;
+border-radius:40rpx;
+font-size:22rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(255,255,255,1);
+line-height: 40rpx;
+text-align: center;
+width: 133rpx;
+}
+.ri_text3{
+  /* width:84rpx; */
+height:40rpx;
+/* background:rgba(230,85,87,1); */
+/* background:rgba(0,160,154,1); */
+opacity:1;
+border-radius:40rpx;
+font-size:22rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:#00A09A;
+line-height: 40rpx;
+text-align: center;
+}
+.tp{
+  padding-left: 10rpx;
+}
+.ri_img{
+  padding-top: 12rpx;
+  margin-left: 30rpx;
+}
+.fixbut{
+  position: fixed;
+  bottom: 0rpx;
+  height: 105rpx;
+  width: 100%;
+  /* background: white; */
+  background: #00A09A;
+}
+.fang{
+  display: inline-block;
+  width:36rpx;
+  height: 34rpx;
+  background:rgba(230,85,87,1);
+  border-radius:4rpx;
+  line-height: 34rpx;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 24rpx;
+}
+.timefixed{
+  margin-top: 20rpx;
+  position: fixed;
+  bottom: 138rpx;
+  height: 72rpx;
+  width: 100%;
+  background: #FEEEEC;
+  padding-left: 32rpx;
+  font-size: 24rpx;
+  color:rgba(51,51,51,1);
+  line-height: 81rpx;
+}
+.box_but{
+  padding: 0rpx 32rpx;
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  padding-top: 31rpx;
+}
+.but_le{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.le_pri{
+/* font-size:48rpx;
+font-family:PingFang SC;
+font-weight:bold;
+line-height:66rpx;
+color:rgba(230,85,87,1);
+opacity:1; */
+font-size:32rpx;
+font-family:PingFang SC;
+font-weight:400;
+line-height:45rpx;
+color:rgba(255,255,255,1);
+-webkit-text-stroke:1 rgba(0,0,0,0.00);
+/* text-stroke:1 rgba(0,0,0,0.00); */
+opacity:1;
+}
+.le_pri text{
+  font-size: 30rpx;
+}
+.le_opri{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(153,153,153,1);
+opacity:1;
+text-decoration: line-through;
+padding-left:12rpx;
+}
+.le_img{
+  padding-top:2rpx;
+  padding-right:16rpx;
+}
+.ri_now{
+  width:264rpx;
+height:72rpx;
+background:rgba(230,85,87,1);
+opacity:1;
+border-radius:40rpx;
+line-height: 72rpx;
+text-align: center;
+font-size: 28rpx;
+color: white;
+}
+.swiper_con{
+  padding: 30rpx;
+  background: white;
+  min-height: 600rpx;
+  padding-bottom: 70rpx;
+}
+.swiper_con_fu{
+  padding: 30rpx;
+  background: white;
+  min-height: 600rpx;
+  /* padding-bottom: 70rpx; */
+  text-align: center;
+  padding-top: 161rpx;
+}
+.fu_text{
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:400;
+line-height:42rpx;
+color:rgba(222,219,219,1);
+opacity:1;
+margin-top: 26rpx;
+}
+.text_le{
+  padding-right: 25rpx !important;
+}

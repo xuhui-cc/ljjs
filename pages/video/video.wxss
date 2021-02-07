@@ -1,0 +1,16 @@
+/* pages/video/video.wxss */
+page{
+  position: absolute;
+  width:750rpx;
+  height:1334rpx;
+  background:rgba(0,0,0,1);
+  opacity:1;
+}
+.video{
+  position: absolute;
+  top: 400rpx;
+  width:750rpx;
+  height:470rpx;
+  background:rgba(225,225,225,1);
+  opacity:1;
+}

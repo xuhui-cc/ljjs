@@ -1,0 +1,32 @@
+<view class="naviBar" style="height:{{naviHeight}}px; width:{{screenWidth}}px;">
+  <view class="flex"  style="width: 100%;height:{{naviContentHeight}}px; margin-top:{{statusBarHeight}}px;">
+    <block wx:if="{{type == 4}}">
+      <slot></slot>
+    </block>
+    <block wx:else>
+      <view class="defoultNaviContent">
+        <!-- 左侧item -->
+        <view class="leftItem">
+          <block wx:if="{{type == 2}}">
+            <slot></slot>
+          </block>
+          <block wx:else>
+            <view class="backItem" >
+              <image src="./naviBarImg/navi_back.png" class="backItem_img" catchtap="backItemClicked"></image>
+              <!-- <image src="./naviBarImg/navi_back.png" class="backItem_img" catchtap="backItemClicked"></image> -->
+            </view>
+          </block>
+        </view>
+        <!-- centerItem -->
+        <view class="centerItem">
+          <block wx:if="{{type == 3}}">
+            <slot></slot>
+          </block>
+          <block wx:else>
+            <view class="titleView">{{title}}</view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

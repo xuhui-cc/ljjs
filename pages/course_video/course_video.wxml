@@ -1,0 +1,5 @@
+<view class="containers">
+    <view class="ww">
+    <video wx:if="{{videoUrl}}" bindtimeupdate="updatatime" bindfullscreenchange="fullScreen" autoplay="true" class="videoo {{isfull? 'show': 'hide'}}"  id="11" src='{{videoUrl}}' autoplay='true' controls='true'></video>
+    </view>
+</view>

@@ -1,0 +1,31 @@
+<view class="container">
+
+  <naviBar title="课程" type='2'></naviBar>
+
+
+  <view style="margin-top:{{naviHeight + 15}}px;" >
+    <view wx:for="{{courseList.surplus}}" wx:key="index" >
+    <view class="course_layout" bindtap="toCourseDetail" data-id="{{item.id}}">
+      <image class="course_face" src="{{item.xcx_avatar}}"/>
+      <text class="course_title">{{item.title}}</text>
+      <view class="flex" >
+        <view style="width:352rpx;margin:20rpx 30rpx;" class="flex">
+          <view wx:for="{{item.teacher}}" wx:key = 'tea_index' wx:for-item="teacher">
+            <image class="tea_ava" src="{{teacher.avatar}}"/>
+            <view class="tea_name">{{teacher.name}}</view>
+          </view>
+        </view>
+        <view class="price" wx:if="{{item.price}}">¥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+  </view>
+
+  
+  <view wx:if="{{!courseList.surpluscourseList.surplus== ''}}">
+    <image class="null" src="../../images/null_course.png"></image>
+    <view class="null_note">暂无课程</view>
+  </view>
+  
+
+</view>

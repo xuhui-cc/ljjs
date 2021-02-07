@@ -1,0 +1,106 @@
+
+<view class="container" >
+
+  <image class="background_img" mode="aspectFill" src="../../images/background.png" ></image>
+  <image class="gk" mode="widthFix" src="../../images/jz.png"></image>
+
+  <!-- 语言 -->
+  <!-- <view class="pdf1" wx:if="{{islogin}}" bindtap="showModal_num" data-type='{{1}}'></view>
+  <button class='pdf_wxbtn1' wx:else="" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-type='{{1}}'></button>
+
+
+  <view class="pdf2" wx:if="{{islogin}}" bindtap="showModal_num" data-type='{{2}}'></view>
+  <button class='pdf_wxbtn2' wx:else="" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-type='{{2}}'></button> -->
+  <!-- <view class="video" wx:if="{{islogin}}" bindtap="showModal_num" data-type='{{3}}'></view>
+  <button class='video_wxbtn' wx:else="" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-type='{{3}}'></button> -->
+
+  <!-- <view class="jgh-title" wx:if="{{islogin}}" bindtap="showModal_num" data-type='{{1}}'>语言</view>
+ <button class='jgh_wxbtn' wx:else="" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-type='{{1}}'>语言</button>
+
+  <view class="xk-title" wx:if="{{islogin}}"  bindtap="showModal_num" data-type='{{2}}'>职业能力倾向测验</view>
+  <button class='xk_wxbtn' wx:else="" data-type='{{2}}' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">职业能力倾向测验</button> -->
+
+  <!-- <view class="msjj-title" wx:if="{{islogin}}" bindtap="showModal_num" data-type='{{3}}'>史上最全面的面试讲解</view>
+  <button class='msjj_wxbtn' wx:else="" data-type='{{3}}' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">史上最全面的面试讲解</button> -->
+  
+    
+
+<view class="jgg">
+  <!-- 语言 -->
+  <view class="jgh-title" wx:if="{{islogin}}" bindtap="{{opening? '' :'showModal_num'}}" data-type='{{1}}'>语言</view>
+  <label for="jgh-title1" wx:else><view class="jgh-title" >语言</view></label>
+  <button id='jgh-title1' data-type='{{1}}' hidden="{{true}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+ 
+ <!-- 逻辑 -->
+  <view class="jgh-title" wx:if="{{islogin}}" bindtap="{{opening? '' :'showModal_num'}}" data-type='{{4}}'>逻辑</view>
+  <label for="jgh-title4" wx:else><view class="jgh-title" >逻辑</view></label>
+  <button id='jgh-title4' data-type='{{4}}' hidden="{{true}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+
+  <!-- 数资 -->
+  <view class="jgh-title" wx:if="{{islogin}}" bindtap="{{opening? '' :'showModal_num'}}" data-type='{{5}}'>数资</view>
+  <label for="jgh-title5" wx:else><view class="jgh-title" >数资</view></label>
+  <button id='jgh-title5' data-type='{{5}}' hidden="{{true}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+
+  <!-- 常识 -->
+  <view class="jgh-title" wx:if="{{islogin}}" bindtap="{{opening? '' :'showModal_num'}}" data-type='{{6}}'>常识</view>
+  <label for="jgh-title6" wx:else><view class="jgh-title" >常识</view></label>
+  <button id='jgh-title6' data-type='{{6}}' hidden="{{true}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+
+  <!-- 综合应用能力 -->
+  <view class="jgh-title" wx:if="{{islogin}}" bindtap="{{opening? '' :'showModal_num'}}" data-type='{{7}}' style="padding-left:70rpx;line-height:206rpx;">综合应用能力</view>
+  <label for="jgh-title7" wx:else><view class="jgh-title" style="padding-left:70rpx;line-height:206rpx;">综合应用能力</view></label>
+  <button id='jgh-title7' data-type='{{7}}' hidden="{{true}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+</view>
+
+<!-- 蒙层 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal_num && !kemu_fill}}"></view>
+
+<!-- 弹框 -->
+  <view class="layout2" wx:if="{{showModal_num && !kemu_fill}}" >
+    
+    <image class="kc" src="../../images/kc.png" ></image>
+    <text class="xd">学段</text>
+    <view class="select_btn1" bindtap="xl_select" data-btn="1">
+      <text class="xd_scontent" >{{xd_content}}</text>
+      <image class="btn_xl1" src="../../images/xl.png" ></image>
+    </view>
+    
+   
+    
+    <scroll-view class="xd_menu" scroll-y='true' enable-flex="true" wx:if="{{isxd}}">
+     <view  wx:for="{{select}}" wx:key="this">
+      <view class="xd_content" bindtap="select" data-select="{{item.xd}}" data-index="{{index}}" data-btn="1">{{item.xd}}</view>
+      <view class="xd_heng"></view>
+    </view>
+    </scroll-view>
+    <text class="xk">学科</text>
+    <view class="select_btn2" bindtap="xl_select" data-btn="2">
+      <text class="xk_scontent" >{{xk_content}}</text>
+      <image class="btn_xl2" src="../../images/xl.png" ></image>
+    </view>
+    
+    <scroll-view class="xk_menu" scroll-y='true' enable-flex="true" wx:if="{{isxk}}">
+      <view  wx:for="{{select[index].xk}}" wx:key="xk_index" >
+        <view class="xk_content" bindtap="select" data-select="{{item}}" data-btn="2">{{item}}</view>
+        <view class="xk_heng"></view>
+      </view>
+    </scroll-view>
+      
+    <input class="input_kc" placeholder="请向咨询老师索取关键字" type='number' bindinput="input"></input>
+    <image class="btn_kc" src="../../images/btn_addr1.png" wx:if='{{!input_kc}}'></image>
+    <view class="kc_yes" wx:if='{{!input_kc}}'>确定</view>
+    <image class="btn_kc" src="../../images/btn_addr2.png" wx:if='{{input_kc}}' bindtap="kc_submit"></image>
+    <view class="kc_yes" wx:if='{{input_kc}}' bindtap="kc_submit">确定</view>
+ 
+    <image class="kc_del" src="../../images/del.png" bindtap="del_num"></image>
+  </view>
+
+  <!-- <image class="share" src="../../images/share.png"></image>
+  <button class="btn_share" open-type='share'>
+    <image class="ljlogo" src="../../images/lj.png"></image>
+    <view class="share_tip">免费送好友资料</view>
+    <image class="share_btn" src="../../images/share_btn.png"></image>
+    <view class="mss">马上送</view>
+  </button> -->
+
+</view>

@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/first_page/first_page",
+    "pages/video/video",
+    "pages/course_detail/course_detail",
+    "pages/course_video/course_video",
+    "pages/course/course"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    
+    "color": "#3C464F",
+    "selectedColor": "#00A09A",
+    "borderStyle": "white",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "text": "资料",
+        "pagePath": "pages/first_page/first_page",
+        "iconPath": "images/test2.png",
+        "selectedIconPath": "images/test1.png"
+      },
+      {
+        "text": "课程",
+        "pagePath": "pages/course/course",
+        "iconPath": "images/course2.png",
+        "selectedIconPath": "images/course1.png"
+      } 
+    ]
+  },
+
+  "sitemapLocation": "sitemap.json"
+}
