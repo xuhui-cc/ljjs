@@ -450,13 +450,13 @@ color: white;
 .swiper_con{
   padding: 30rpx;
   background: white;
-  min-height: 600rpx;
-  padding-bottom: 70rpx;
+  /* min-height: 600rpx; */
+  /* padding-bottom: 70rpx; */
 }
 .swiper_con_fu{
   padding: 30rpx;
   background: white;
-  min-height: 600rpx;
+  /* min-height: 600rpx; */
   /* padding-bottom: 70rpx; */
   text-align: center;
   padding-top: 161rpx;

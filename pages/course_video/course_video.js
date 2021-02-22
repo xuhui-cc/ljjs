@@ -18,12 +18,12 @@ Page({
     duan:''
   },
 
-  bindplay: function (e) {
-    this.setData({
-      tab_image: "none"
-    }),
-    this.videoCtx.play();
-  },
+  // bindplay: function (e) {
+  //   this.setData({
+  //     tab_image: "none"
+  //   }),
+  //   this.videoCtx.play();
+  // },
 
   //获取开始时间戳
   getstarttime(){
@@ -161,7 +161,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  // onShareAppMessage: function () {
 
-  },
+  // },
 })

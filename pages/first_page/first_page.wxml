@@ -27,8 +27,8 @@
 
 <view class="jgg">
   <!-- 语言 -->
-  <view class="jgh-title" wx:if="{{islogin}}" bindtap="{{opening? '' :'showModal_num'}}" data-type='{{1}}'>语言</view>
-  <label for="jgh-title1" wx:else><view class="jgh-title" >语言</view></label>
+  <view class="jgh-title" wx:if="{{islogin}}" bindtap="{{opening? '' :'showModal_num'}}" data-type='{{1}}'>言语</view>
+  <label for="jgh-title1" wx:else><view class="jgh-title" >言语</view></label>
   <button id='jgh-title1' data-type='{{1}}' hidden="{{true}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
  
  <!-- 逻辑 -->

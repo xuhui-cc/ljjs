@@ -78,7 +78,7 @@ Page({
   copy:function(){
     var that = this;
     var tel = that.data.teacherInfo.mobile
-    console.log(tel)
+    // console.log(tel)
       wx.setClipboardData({
       data: tel,
       success: function(res) {
@@ -95,14 +95,13 @@ Page({
 
   submit_video_recod(){
       var that = this
-      var uid = wx.getStorageSync('uid')
       var params = {
-          uid:uid,
+          uid:wx.getStorageSync('uid'),
           id: that.data.pass_video_id,
           duration: that.data.pass_video_time,
           course_id: that.data.id
       }
-      console.log("提交的参数"+ params.uid,params.id, params.duration)
+      // console.log("提交的参数"+ params.uid,params.id, params.duration)
       app.ljjs.video_addinfo(params).then(d=>{
           // if(d.data.code)
           // console.log(d)

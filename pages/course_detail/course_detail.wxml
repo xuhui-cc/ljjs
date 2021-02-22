@@ -1,9 +1,5 @@
-
+<naviBar title="课程"></naviBar>
 <view class="container">
-
-    <naviBar title="课程"></naviBar>
-
-
     <view class='top' style="margin-top:{{naviHeight }}px;">
         <view class='tit'>{{info.title}}</view>
         <view class='sub_tit'>{{info.subject}}</view>
