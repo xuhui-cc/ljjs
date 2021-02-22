@@ -1,7 +1,7 @@
  const fetch = require('./fetch')
 
-// const URI = 'http://jztest.lingjun.net/Home/api/'    //测试接口
-const URI = 'https://jz.lingjun.net/Home/api/'    //正式接口
+const URI = 'http://jztest.lingjun.net/Home/api/'    //测试接口
+// const URI = 'https://jz.lingjun.net/Home/api/'    //正式接口
 
 //const URI = 'http://li.jiaozi.cn/Home/api/'    //本地接口
  
